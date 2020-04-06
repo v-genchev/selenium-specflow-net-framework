@@ -6,35 +6,22 @@ namespace selenium_net_project.drivermanager
 {
     public class DynamicDriverManager : IDriverManager
     {
-        private IDriverManager driverManager;
-
+        public IDriverManager DriverManager { get; private set; }
         public DynamicDriverManager()
         {
             string browserType = ConfigurationManager.AppSettings["Browser"];
-            switch (browserType)
+            DriverManager = browserType switch
             {
-                case "firefox":
-                    driverManager = new FirefoxDriverManager();
-                    break;
-                case "chrome":
-                    driverManager = new ChromeDriverManager();
-                    break;
-                default:
-                    throw new PlatformNotSupportedException("Browser type: " + browserType + " is not supported");
-            }
+                "firefox" => new FirefoxDriverManager(),
+                "chrome" => new ChromeDriverManager(),
+                _ => throw new PlatformNotSupportedException("Browser type: " + browserType + " is not supported"),
+            };
         }
+
         public IWebDriver Driver => DriverManager.Driver;
 
-        public IDriverManager DriverManager { get => driverManager; set => driverManager = value; }
+        public void CreateDriver() => DriverManager.CreateDriver();
 
-        public void CreateDriver()
-        {
-            DriverManager.CreateDriver();
-        }
-
-        public void QuitDriver()
-        {
-            DriverManager.QuitDriver();
-        }
+        public void QuitDriver() => DriverManager.QuitDriver();
     }
 }

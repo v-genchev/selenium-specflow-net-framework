@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 
 namespace selenium_net_project.helpers
 {
@@ -26,5 +25,4 @@ namespace selenium_net_project.helpers
                
         }
     }
-
 }

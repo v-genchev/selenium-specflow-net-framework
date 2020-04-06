@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using SeleniumExtras.WaitHelpers;
 using System;
 using selenium_net_project.drivermanager;
 using OpenQA.Selenium.Support.UI;

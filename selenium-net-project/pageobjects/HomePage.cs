@@ -2,8 +2,6 @@
 using SeleniumExtras.PageObjects;
 using selenium_net_project.drivermanager;
 using System.Configuration;
-using System.Collections.Generic;
-using System;
 
 namespace selenium_net_project.pageobjects
 {
