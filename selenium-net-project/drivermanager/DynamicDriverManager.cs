@@ -14,7 +14,7 @@ namespace selenium_net_project.drivermanager
             {
                 "firefox" => new FirefoxDriverManager(),
                 "chrome" => new ChromeDriverManager(),
-                _ => throw new PlatformNotSupportedException("Browser type: " + browserType + " is not supported"),
+                _ => throw new PlatformNotSupportedException($"Browser type: {browserType} is not supported"),
             };
         }
 

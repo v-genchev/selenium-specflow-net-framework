@@ -9,10 +9,7 @@ namespace selenium_net_project.steps
     public class CommonSteps
     {
         public DynamicDriverManager driverManager;
-        public CommonSteps(DynamicDriverManager driverManager)
-        {
-            this.driverManager = driverManager;
-        }
+        public CommonSteps(DynamicDriverManager driverManager) => this.driverManager = driverManager;
 
         [StepDefinition(@"I start the browser")]
         public void StartBrowser()

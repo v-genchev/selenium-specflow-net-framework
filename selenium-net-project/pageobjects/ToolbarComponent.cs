@@ -15,10 +15,8 @@ namespace selenium_net_project.pageobjects
 
         [FindsBy(How = How.XPath, Using = "//div[@class='PRGS-Bar-nav']//div[contains(@class, 'PRGS-Bar-dropdown') and child::a[not(contains(@class,'disabled'))]]//a")]
         public IList<IWebElement> ActiveSubmenuItems { get; set; }
-        public ToolbarComponent(DynamicDriverManager driverManager) : base(driverManager)
-        {
-            WaitForElement(Toolbar);
-        }
+
+        public ToolbarComponent(DynamicDriverManager driverManager) : base(driverManager) => WaitForElement(Toolbar);
 
         public void HoverOverMenu(string menuName)
         {

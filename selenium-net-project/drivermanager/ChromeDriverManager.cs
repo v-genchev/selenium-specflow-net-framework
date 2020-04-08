@@ -8,9 +8,6 @@ namespace selenium_net_project.drivermanager
     {
         public IWebDriver Driver { get; private set; }
 
-        public void CreateDriver()
-        {
-            Driver = new ChromeDriver(ConfigurationManager.AppSettings["DriversDir"]);
-        }
+        public void CreateDriver() => Driver = new ChromeDriver(ConfigurationManager.AppSettings["DriversDir"]);
     }
 }

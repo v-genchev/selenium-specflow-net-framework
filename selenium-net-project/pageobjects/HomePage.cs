@@ -17,10 +17,7 @@ namespace selenium_net_project.pageobjects
 
         public HomePage(DynamicDriverManager driverManager, bool navigateToUrl) : base(driverManager)
         {
-            if (navigateToUrl)
-            {
-                NavigateTo(baseUrl);
-            }
+            if (navigateToUrl) NavigateTo(baseUrl);
             WaitForPage(PageBody);
         }
     }

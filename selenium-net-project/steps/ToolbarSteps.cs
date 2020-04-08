@@ -9,23 +9,20 @@ namespace selenium_net_project.steps
     public class ToolbarSteps
     {
         public DynamicDriverManager driverManager;
-        public ToolbarSteps(DynamicDriverManager driverManager)
-        {
-            this.driverManager = driverManager;
-        }
+        public ToolbarSteps(DynamicDriverManager driverManager) => this.driverManager = driverManager;
 
         [StepDefinition(@"I hover over (.*) menu")]
         public void HoverOverMenu(String menu)
         {
-            ToolbarComponent toolbar = new ToolbarComponent(driverManager);
-            toolbar.HoverOverMenu(menu);
+            new ToolbarComponent(driverManager).
+                HoverOverMenu(menu);
         }
 
         [StepDefinition(@"I select (.*) submenu")]
         public void SelectSubmenu(String submenu)
         {
-            ToolbarComponent toolbar = new ToolbarComponent(driverManager);
-            toolbar.SelectSubmenu(submenu);
+            new ToolbarComponent(driverManager)
+                .SelectSubmenu(submenu);
         }
     }
 }

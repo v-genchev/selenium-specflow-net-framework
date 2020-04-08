@@ -6,17 +6,12 @@ namespace selenium_net_project.pageobjects
 {
     abstract class Page : Component
     {
-        private readonly TimeSpan waitIntervalPage = TimeSpan.FromSeconds(20);
+        private readonly TimeSpan _waitIntervalPage = TimeSpan.FromSeconds(20);
+
         public Page(DynamicDriverManager driverManager) : base(driverManager) { }
 
-        public void NavigateTo(string url)
-        {
-            driverManager.Driver.Navigate().GoToUrl(url);
-        }
+        public void NavigateTo(string url) => driverManager.Driver.Navigate().GoToUrl(url);
 
-        public void WaitForPage(IWebElement element)
-        {
-            WaitForElement(element, waitIntervalPage);
-        }
+        public void WaitForPage(IWebElement element) => WaitForElement(element, _waitIntervalPage);
     }
 }

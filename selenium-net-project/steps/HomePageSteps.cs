@@ -8,10 +8,7 @@ namespace selenium_net_project.steps
     public class HomePageSteps
     {
         public DynamicDriverManager driverManager;
-        public HomePageSteps(DynamicDriverManager driverManager)
-        {
-            this.driverManager = driverManager;
-        }
+        public HomePageSteps(DynamicDriverManager driverManager) => this.driverManager = driverManager;
 
         [StepDefinition(@"I navigate to Progress home page")]
         public void NavigateToHomePage() => new HomePage(driverManager, true);
